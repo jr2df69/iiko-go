@@ -129,6 +129,7 @@ func (c *Client) MethodName(req *MethodNameRequest, opts ...Option) (*MethodName
 - [ ] /employees/couriers/by_role
 - [ ] /employees/couriers/active_location/by_terminal
 - [ ] /employees/couriers/active_location
+- [x] /employees/shift/
 - [ ] /marketing_sources
 - [ ] /order/create
 - [ ] /order/by_id
