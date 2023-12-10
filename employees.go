@@ -3,9 +3,9 @@ package iiko
 import "github.com/google/uuid"
 
 type OpenPersonalSessionRequest struct {
-	OrganizationID  string `json:"organizationId"`
-	TerminalGroupID string `json:"terminalGroupId"`
-	EmployeeID      string `json:"employeeId"`
+	OrganizationID  uuid.UUID `json:"organizationId"`
+	TerminalGroupID uuid.UUID `json:"terminalGroupId"`
+	EmployeeID      string    `json:"employeeId"`
 }
 
 type OpenPersonalSessionResponse struct {
@@ -14,9 +14,9 @@ type OpenPersonalSessionResponse struct {
 }
 
 type ClosePersonalSessionRequest struct {
-	OrganizationID  string `json:"organizationId"`
-	TerminalGroupID string `json:"terminalGroupId"`
-	EmployeeID      string `json:"employeeId"`
+	OrganizationID  uuid.UUID `json:"organizationId"`
+	TerminalGroupID uuid.UUID `json:"terminalGroupId"`
+	EmployeeID      string    `json:"employeeId"`
 }
 
 type ClosePersonalSessionResponse struct {
@@ -25,9 +25,9 @@ type ClosePersonalSessionResponse struct {
 }
 
 type CheckPersonalSessionOpenedRequest struct {
-	OrganizationID  string `json:"organizationId"`
-	TerminalGroupID string `json:"terminalGroupId"`
-	EmployeeID      string `json:"employeeId"`
+	OrganizationID  uuid.UUID `json:"organizationId"`
+	TerminalGroupID uuid.UUID `json:"terminalGroupId"`
+	EmployeeID      string    `json:"employeeId"`
 }
 
 type CheckPersonalSessionOpenedResponse struct {
