@@ -58,9 +58,12 @@ func (c *Client) Close() {
 	close(c.quit)
 }
 
-func NewClient(apiLogin string) (*Client, error) {
+func NewClient(apiLogin, baseURL string) (*Client, error) {
+	if baseURL == "" {
+		baseURL = BaseURL
+	}
 	client := &Client{
-		baseURL:              BaseURL,
+		baseURL:              baseURL,
 		httpClient:           http.DefaultClient,
 		apiLogin:             apiLogin,
 		timeout:              DefaultTimeout,
