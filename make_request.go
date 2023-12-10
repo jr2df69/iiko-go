@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"net/http"
+	"path"
 	"strconv"
 )
 
@@ -22,7 +23,7 @@ func (c *Client) post(requiresAuth bool, endpoint string, body interface{}, resp
 	}
 
 	// Create request.
-	req, err := http.NewRequest(http.MethodPost, c.baseURL+endpoint, bytes.NewBuffer(jsonBody))
+	req, err := http.NewRequest(http.MethodPost, path.Join(c.baseURL, endpoint), bytes.NewBuffer(jsonBody))
 	if err != nil {
 		return err
 	}
